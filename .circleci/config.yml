@@ -20,4 +20,8 @@ jobs:
           command: build-init
       - run:
           name: Sandbox provisionign on remote Docker host
-          command: build-notify pending; ssh docker-host "cd $REMOTE_BUILD_DIR && fin init" && build-notify success || build-notify failure
+          command: |
+            export PR_COMMENT=1
+            build-notify pending
+            ssh docker-host "cd $REMOTE_BUILD_DIR && fin init"
+            [[ $? == 0 ]] && build-notify success || build-notify failure
