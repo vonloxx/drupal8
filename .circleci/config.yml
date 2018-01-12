@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: /home/agent/build
     docker:
-      - image: docksal/bitbucket-pipelines-agent:edge
+      - image: docksal/ci-agent:edge-php
     environment:
        # Tell CircleCI where to read the shared build environment variables from
        BASH_ENV: /home/agent/.bashrc
@@ -21,3 +21,6 @@ jobs:
       - run:
           name: Sandbox provisionign on remote Docker host
           command: ssh docker-host "cd $REMOTE_BUILD_DIR && fin init"
+      - run:
+          name: Post build notifications
+          command: build-notify
