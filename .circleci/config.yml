@@ -25,4 +25,3 @@ jobs:
             build-init && build-notify pending
             ssh docker-host "cd $REMOTE_BUILD_DIR && fin init"
             [[ $? == 0 ]] && build-notify success || build-notify failure
-            
