@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/vonloxx/drupal8.svg?style=svg)](https://circleci.com/gh/vonloxx/drupal8)
 
-# Docksal powered Drupal 8 Installation
+# Docksal powered Drupal 8 Installation (TESTS)
 
 This is a sample vanilla Drupal 8 installation pre-configured for use with Docksal.  
 
